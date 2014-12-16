@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)https://www.kernel.org/category/about.html -->
 <html lang="en">
   
   <head>
@@ -13,7 +12,46 @@
     <style type="text/css">
     </style>
   </head>
-  
+<script language="JavaScript">
+function iFrameHeight() {   
+	var iframe = document.getElementById("contentIframe");
+	iframe.height = 0;
+	if(navigator.userAgent.indexOf("MSIE 8.0")>0){
+		try{ 
+				var bHeight = iframe.contentWindow.document.body.scrollHeight; 
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
+				var height = Math.max(bHeight, dHeight); 
+				iframe.height = height; 
+			}catch (ex){}
+	}
+	else{
+		if (document.getElementById){
+			if(iframe && !window.opera){
+				if(iframe.contentDocument && iframe.contentDocument.body.offsetHeight){
+					iframe.height = iframe.contentDocument.body.offsetHeight + 20;
+				}
+				else if(iframe.Document && iframe.Document.body.scrollHeight){
+					iframe.height = iframe.Document.body.scrollHeight + 20;
+					}
+				else{
+					var bHeight = iframe.contentWindow.document.body.scrollHeight; 
+					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
+					var height = Math.max(bHeight, dHeight); 
+					iframe.height = height; 
+				}
+			}
+			else{
+				try{ 
+					var bHeight = iframe.contentWindow.document.body.scrollHeight; 
+					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
+					var height = Math.max(bHeight, dHeight); 
+					iframe.height = height; 
+				}catch (ex){}
+			}
+		}
+	}
+}
+</script>  
   <body id="index" class="home">
     <header id="banner" class="body">
       <div id="tux-gear">
@@ -29,43 +67,27 @@
             </a>
           </li>
            <li>
-            <a href="aboutme.html">
+            <a target="contentIframe" href="aboutme.html">
               About Me
             </a>
           </li>
           <li>
-            <a href="https://github.com/hubert-he?tab=repositories">
+<!--            <a href="https://github.com/hubert-he?tab=repositories">  -->
+			<a target="contentIframe" href="repo.html" class="active">
               Repositories
             </a>
           </li>
           <li>
-            <a href="myblog.html">
+            <a target="contentIframe" href="myblog.html">
               Blog
             </a>
           </li>
         </ul>
       </nav>
     </header>
-    <!-- /#banner -->
-   <aside id="featured" class="body">
-    <article>
-        <table id="protocols">
-        <tr>
-          <td>Email</a></td>
-          <td>hzh512 <font size="5">&#9758</font>gmail.com</td>
-        </tr>
-        <tr>
-          <td>Github</td>
-          <td><a href="https://github.com/hubert-he">https://github.com/hubert-he</a></td>
-        </tr>
-        </table>
-                <table id="releases">
-                <tbody>
-               
-                </tbody></table>
-        
-    </article>
-</aside>
+	<div style="margin: 0px 285px; width: 845px; height: 100%">
+	<iframe src="info.html" frameborder="0" name="contentIframe" id="contentIframe" scrolling="no" style="width: 845px;"  onload="iFrameHeight()"></iframe> 
+  </div>
   </body>
 
 </html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repositories>
+	<repo>
+		<Name>hubert-he.github.com</Name>
+		<date>2014-1-21</date>
+		<link>https://github.com/hubert-he/hubert-he.github.com</link>
+		<linkDes>Fork</linkDes>
+		<Description>The source code of my homepage at github</Description>
+	</repo>
+	<repo>
+		<Name>preParseJS</Name>
+		<date>2014-11-24</date>
+		<link>https://github.com/hubert-he/preParseJS</link>
+		<linkDes>Fork</linkDes>
+		<Description>using lexical analysis to check validity of javascript, implemented by C language.</Description>
+	</repo>
+	<repo>
+		<Name>htmlJs</Name>
+		<date>2014-11-27</date>
+		<link>https://github.com/hubert-he/htmlJs</link>
+		<linkDes>Fork</linkDes>
+		<Description>Get the keyword that need to be translated from html and javascript file. And then save them into excel file.</Description>
+	</repo>
+	<repo>
+		<Name>CC-Web-Mrg</Name>
+		<date>2014-12-7</date>
+		<link>https://github.com/hubert-he/CC-Web-Mrg</link>
+		<linkDes>Fork</linkDes>
+		<Description>The Asterisk is an open source telephony switching and private branch exchange service for Linux.
+		  This Repo is a web UI for Asterisk. You can edit some conf file, change the state of machine, 
+		  nd get state of Asterisk. If you're interested, please check the readme for more detail.</Description>
+	</repo>
+</Repositories>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Repositories</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../res/main.css" type="text/css">
+    <link rel="stylesheet" href="../res/github.css" type="text/css">
+</head>
+
+<body id="index" class="home">
+    <script>
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET", "../data/repo.xml", false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+        var x = xmlDoc.getElementsByTagName("repo");
+        var date, name, link, linkDes, Description;
+
+        for (i = 0; i < x.length; i++) {
+            date = x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue;
+            link = x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+            //	name = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+            Name = x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+            linkDes = x[i].getElementsByTagName("linkDes")[0].childNodes[0].nodeValue;
+            Description = x[i].getElementsByTagName("Description")[0].childNodes[0].nodeValue;
+
+            document.write('<aside class="asidestyle"><article">\n');
+            document.write('<footer class="post-info"><abbr class="published">From ' + date + '</abbr>');
+            document.write('<p><span class=github-btn id=github-btn><a class=gh-btn id=gh-btn href="' + link + '" target=_blank>' + linkDes + '<span class=gh-ico></span></a></span></p></footer>');
+            document.write('<table class="listtable" >');
+            document.write('<tr><th>Repository name</th><td>' + Name + '</td></tr>');
+            document.write('<tr><th>Description</th><td>' + Description + '</td></tr>');
+            document.write('</table>');
+            document.write('<table id="releases"><tbody></tbody></table></article></aside>');
+        }
+    </script>
+</body>
+
+</html>

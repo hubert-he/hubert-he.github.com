@@ -1,93 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../res/jquery-1.11.2.min.js"></script>
     <title>
-      Hubert_he@GitHub
+        Hubert_he@GitHub
     </title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css"
-    type="text/css">
-    <style type="text/css">
-    </style>
-  </head>
-<script language="JavaScript">
-function iFrameHeight() {   
-	var iframe = document.getElementById("contentIframe");
-	iframe.height = 0;
-	if(navigator.userAgent.indexOf("MSIE 8.0")>0){
-		try{ 
-				var bHeight = iframe.contentWindow.document.body.scrollHeight; 
-				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
-				var height = Math.max(bHeight, dHeight); 
-				iframe.height = height; 
-			}catch (ex){}
-	}
-	else{
-		if (document.getElementById){
-			if(iframe && !window.opera){
-				if(iframe.contentDocument && iframe.contentDocument.body.offsetHeight){
-					iframe.height = iframe.contentDocument.body.offsetHeight + 20;
-				}
-				else if(iframe.Document && iframe.Document.body.scrollHeight){
-					iframe.height = iframe.Document.body.scrollHeight + 20;
-					}
-				else{
-					var bHeight = iframe.contentWindow.document.body.scrollHeight; 
-					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
-					var height = Math.max(bHeight, dHeight); 
-					iframe.height = height; 
-				}
-			}
-			else{
-				try{ 
-					var bHeight = iframe.contentWindow.document.body.scrollHeight; 
-					var dHeight = iframe.contentWindow.document.documentElement.scrollHeight; 
-					var height = Math.max(bHeight, dHeight); 
-					iframe.height = height; 
-				}catch (ex){}
-			}
-		}
-	}
-}
-</script>  
-  <body id="index" class="home">
+    <link rel="stylesheet" href="res/main.css" type="text/css">
+</head>
+<body id="index" class="home">
     <header id="banner" class="body">
-      <div id="tux-gear">
-      </div>
-      <h1>
+        <h1>
         <a href="http://hubert-he.github.io">Hubert_he@GitHub</a>
       </h1>
-      <nav>
-        <ul>
-          <li class="active">
-            <a href="index.htm">
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="index.htm">
               Home
             </a>
-          </li>
-           <li>
-            <a target="contentIframe" href="aboutme.html">
+                </li>
+                <li>
+                    <a target="contentIframe" href="pages/aboutme.html">
               About Me
             </a>
-          </li>
-          <li>
-<!--            <a href="https://github.com/hubert-he?tab=repositories">  -->
-			<a target="contentIframe" href="repo.html" class="active">
+                </li>
+                <li>
+                    <a target="contentIframe" href="pages/repo.html">
               Repositories
             </a>
-          </li>
-          <li>
-            <a target="contentIframe" href="blog.html">
-              Blog
+                </li>
+                <li>
+                    <a target="contentIframe" href="pages/blog.html">
+              leetcode
             </a>
-          </li>
-        </ul>
-      </nav>
+                </li>
+            </ul>
+        </nav>
     </header>
-	<div style="margin: 0em auto; width: 845px; height: 100%">
-	<iframe src="info.html" frameborder="0" name="contentIframe" id="contentIframe" scrolling="no" style="width: 845px;"  onload="iFrameHeight()"></iframe> 
-  </div>
-  </body>
-
+    <div style="margin: 0em auto; width: 845px; height: 100%">
+        <iframe src="pages/info.html" frameborder="0" name="contentIframe" id="contentIframe" scrolling="no" style="width: 845px;"></iframe>
+    </div>
+    <script language="JavaScript">
+        $("#contentIframe").load(function() {
+            var mainheight = $(this).contents().find("html").height();
+            $(this).height(mainheight);
+        });
+    </script>
+</body>
 </html>

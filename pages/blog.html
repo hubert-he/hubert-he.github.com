@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>leetcode</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../res/main.css" type="text/css">
+    <link rel="stylesheet" href="../res/github.css" type="text/css">
+    <script src="../res/jquery-1.11.2.min.js"></script>
+</head>
+<body id="index" class="home">
+    <div id="pros" height="100%">
+    </div>
+    <script language="JavaScript">
+        $(document).ready(function() {
+            var blogHeight = 0;
+            $.ajax({
+                type: "GET",
+                async: false,
+                url: "../data/problem.xml",
+                dataType: "xml",
+                success: function(xml) {
+                    $(xml).find('problem').each(function() {
+					
+                        var seq = $(this).find('seqence').text();						
+                        var Name = $(this).find('Name').text();
+                        var date = $(this).find('date').text();						
+                        var link = $(this).find('link').text();
+                        var linkDes = $(this).find('linkDes').text();
+						var description = '';
+						$(this).find('Description').children().each(function(i){ 
+							description += "<p>"+$(this).text()+"</p>";
+						});
+                        var footer = '<footer class="post-info"><abbr class="published">From ' + date + '</abbr><p><span class=github-btn id=github-btn><a class=gh-btn id=gh-btn href="' + link + '" target=_blank>' + linkDes + '<span class=gh-ico></span></a></span></p></footer>'
+                        var table = '<table class="listtable"><tbody><tr><th width="140px">Problem-' + seq + '</th><td>' + Name + '</td></tr><tr><th>Description</th><td>' + description + '</td></tr></tbody></table>';
+                        var futurelogo = '<table id="releases"><tbody></tbody></table>';
+                    
+					    $('<aside class="asidestyle"> </aside>').html('<article>' + footer + table + futurelogo + '</article>').appendTo('#pros');
+                        blogHeight += $('aside').height();
+                        blogHeight += 30;
+                    });
+                }
+            });
+            $("#pros").height(blogHeight);
+        });
+    </script>
+</body>
+
+</html>

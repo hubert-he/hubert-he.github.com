@@ -31,7 +31,7 @@
 						$(this).find('Description').children().each(function(i){ 
 							description += "<p>"+$(this).text()+"</p>";
 						});
-                        var footer = '<footer class="post-info"><abbr class="published">From ' + date + '</abbr><p><span class=github-btn id=github-btn><a class=gh-btn id=gh-btn href="' + link + '" target=_blank>' + linkDes + '<span class=gh-ico></span></a></span></p></footer>'
+                        var footer = '<footer class="post-info"><abbr class="published">From ' + date + '</abbr><p><span class=github-btn id=github-btn><a class=gh-btn id=gh-btn href="' + link + '" target=_blank>' + '<span class=gh-ico></span>'+linkDes + '</a></span></p></footer>'
                         var table = '<table class="listtable"><tbody><tr><th width="140px">Problem-' + seq + '</th><td>' + Name + '</td></tr><tr><th>Description</th><td>' + description + '</td></tr></tbody></table>';
                         var futurelogo = '<table id="releases"><tbody></tbody></table>';
                     

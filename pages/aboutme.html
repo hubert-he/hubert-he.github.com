@@ -6,15 +6,32 @@
     <title>About Me </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../res/main.css" type="text/css">
+	<script src="../res/base64.js"></script>
 </head>
-
+<script>
+    function mailToMe()
+    {
+        var Addr = Base64.decode('aHpoNTEyQGdtYWlsLmNvbQ==');
+        document.getElementById("myAddr").innerHTML = '<a href="mailto:' + Addr + '">' + Addr + '</a>';
+        window.location.href = "mailto:" + Addr;
+    }
+</script>
+<style>
+#logoText{
+text-align: center;
+font-weight: bold;
+background-color: #F7F6F1; 
+margin-bottom: 0.1em;
+}
+</style>
 <body id="index" class="home">
     <aside id="featured" class="body">
         <article>
             <h1 class="entry-title">
-          Education
+          Public Infomation
+          </a>
         </h1>
-            <footer class="post-info">
+			<footer class="post-info">
                 <abbr class="published" title="2013-10-11T18:35:02.713234">
             From 2013-10-11
           </abbr>
@@ -25,6 +42,32 @@
             </a>
                 </p>
             </footer>
+            <table class="listtable" style="border-collapse: separate;border-spacing:12px;">
+                <tr>
+                    <th>Email</th>
+                    <td id="myAddr"><a href="javascript: mailToMe();">hzh512<font size="5">&#9758</font>gmail.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Github</th>
+                    <td><a href="https://github.com/hubert-he">https://github.com/hubert-he</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Linkedin</th>
+                    <td><a target="view_window" href="https://www.linkedin.com/pub/he-zhenhua/41/145/a64">he-zhenhua</a>
+                    </td>
+                </tr>
+            </table>
+            <table id="releases">
+            </table>
+        </article>
+    </aside>
+    <aside id="featured" class="body">
+        <article>
+            <h1 class="entry-title">
+          Education
+        </h1>
             <p> I got Master Degree in Computer Architecture when I graduated from University of Science and Technology of China.</p>
             <h1 class="entry-title">
           Intern Experience
@@ -46,14 +89,7 @@
                 <br> Source Control: git, svn
                 <br>
             </p>
-            <table id="releases">
-                <tbody>
-                    <tr>
-                        <th>hubert-he.github.io
-                            <th>
-                    </tr>
-                </tbody>
-            </table>
+			<ul id="logoText"> hubert-he.github.io </ul>
         </article>
     </aside>
 </body>

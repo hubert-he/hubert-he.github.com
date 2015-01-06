@@ -89,6 +89,7 @@ color: red;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: oswald,helvetica,sans-serif;
+    font-size: 1.17em;
 }
 
 a {
@@ -231,6 +232,17 @@ hr {
     border-radius: 0.5em;
 }
 
+#newFeatured {
+    background: #FFFFFF;
+    margin: 0.5em auto;
+    padding: 1em;
+    width: 50em;
+    border: thin solid;
+    border-color: #DDDACF #CCC8B8 #BBB59F;
+    box-shadow: 0 0.1em 0.3em #CCC8B8;
+    border-radius: 0.5em;
+}
+
 .asidestyle {
 	background: #FFFFFF;
     margin: 1.5em auto;
@@ -335,4 +347,15 @@ a.readmore:active {
     margin: 2em auto;
     padding-top: 3.5em;
     width: 53em;
+}
+
+#tableStyle {
+width:auto;
+height:auto;
+}
+#tableStyle li{
+list-style-type:none;
+width:49%;
+float:left;
+margin-right:0.4em;
 }

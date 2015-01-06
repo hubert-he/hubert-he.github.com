@@ -6,51 +6,40 @@
     <title>Info</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../res/main.css" type="text/css">
+	<script src="../res/jquery-1.11.2.min.js"></script>
 </head>
-<script src="../res/base64.js"></script>
-<script>
-    function mailToMe()
-    {
-        var Addr = Base64.decode('aHpoNTEyQGdtYWlsLmNvbQ==');
-        document.getElementById("myAddr").innerHTML = '<a href="mailto:' + Addr + '">' + Addr + '</a>';
-        window.location.href = "mailto:" + Addr;
-    }
-</script>
-
 <body id="index" class="home">
-    <aside id="featured" class="body">
-        <article>
-            <h1 class="entry-title">
-          Public Infomation
-          </a>
-        </h1>
-            <table class="listtable" style="border-collapse: separate;border-spacing:12px;">
-                <tr>
-                    <th>Email</th>
-                    <td id="myAddr"><a href="javascript: mailToMe();">hzh512<font size="5">&#9758</font>gmail.com</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Github</th>
-                    <td><a href="https://github.com/hubert-he">https://github.com/hubert-he</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Linkedin</th>
-                    <td><a target="view_window" href="https://www.linkedin.com/pub/he-zhenhua/41/145/a64">he-zhenhua</a>
-                    </td>
-                </tr>
-            </table>
-            <table id="releases">
-                <tbody>
-                    <tr>
-                        <th>hubert-he.github.io
-                            <th>
-                    </tr>
-                </tbody>
-            </table>
-        </article>
-    </aside>
 </body>
-
+<script language="JavaScript">
+ $(document).ready(function() {
+	$.getJSON( "../data/new.json", function( data ) {
+		$.each(data, function(j, oneItem){
+			$.each( oneItem, function( key, val ) {
+				var titleItem = [];
+				var tableItem = [];
+				$.each(val, function(k, v){
+					if(k === "Title") titleItem.push( "<h1 class='entry-title'>" + v + "</h1>" );
+					else if(k === "Description"){
+						tableItem.push("<li>");
+						$.each(v, function(i,value){      
+							tableItem.push("<p>"+value+"</p>");
+						});
+						tableItem.push("</li>"); 
+					}
+					else if(k === "Image"){tableItem.push("<li><img src='../res/"+v+"' width='100%' height='70%'></li>");}
+				});
+				var releaseItem = "<div id='releases'></div>";
+				var articleItem = "<article>"+titleItem.join("")+"<ul id='tableStyle'>"+ tableItem.join("") + "</ul>"+releaseItem +"</artivle>"
+				$( "<aside>",  {
+					"class": "body",
+					"id": "newFeatured",
+					html: articleItem
+				}).appendTo( "body" );
+			});
+		});
+		var main = $(window.parent.document).find("#contentIframe");
+		main.height($("body").height()+60);
+	});
+});
+</script>
 </html>

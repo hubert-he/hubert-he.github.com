@@ -1,0 +1,18 @@
+{ 
+"news":	[
+		{ 
+		  "Title": "[2014-12] The ADSL Router with HTTP Proxy written by me using C language was released.",
+		  "Description": ["The OSK system(one ADSL-Router RTOS) with the IPNP feature which is used to configure IP Plug and Play function.", 
+						  "Users don't have to change their network settings of their PC/iPad/iPhone from Company to home.", 
+						  "Even if User Change the proxy server settings wrongly, they can still surf internet.", 
+						  "So, the HTTP Proxy must be setted in OSK Embeded System.", 
+						  "The picture on the right is Dlink ADSL Router for Thailand TRUE with our OSK Embeded System"
+						  ],
+		  "Image": "20150101.png"
+		},
+		{ 
+		  "Title": "[2013-11] Join GitHub.",
+		  "Description": ["my github: https://github.com/hubert-he/."]
+		}
+	]
+}

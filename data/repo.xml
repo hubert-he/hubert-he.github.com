@@ -30,4 +30,11 @@
 		  This Repo is a web UI for Asterisk. You can edit some conf file, change the state of machine, 
 		  nd get state of Asterisk. If you're interested, please check the readme for more detail.</Description>
 	</repo>
+	<repo>
+		<Name>port_kernel_kconfig</Name>
+		<date>2015-01-27</date>
+		<link>https://github.com/hubert-he/port_kernel_kconfig</link>
+		<linkDes>Fork</linkDes>
+		<Description>The portable Kernel Kconfig.</Description>
+	</repo>
 </Repositories>

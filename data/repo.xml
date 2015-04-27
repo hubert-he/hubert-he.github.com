@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Repositories>
 	<repo>
-		<Name>hubert-he.github.com</Name>
-		<date>2014-1-21</date>
-		<link>https://github.com/hubert-he/hubert-he.github.com</link>
-		<linkDes>Fork</linkDes>
-		<Description>The source code of my homepage at github</Description>
-	</repo>
-	<repo>
 		<Name>preParseJS</Name>
 		<date>2014-11-24</date>
 		<link>https://github.com/hubert-he/preParseJS</link>
@@ -27,5 +20,12 @@
 		<link>https://github.com/hubert-he/port_kernel_kconfig</link>
 		<linkDes>Fork</linkDes>
 		<Description>The portable Kernel Kconfig.</Description>
+	</repo>
+	<repo>
+		<Name>uHttpProxy</Name>
+		<date>2015-2-11</date>
+		<link>https://github.com/hubert-he/uHttpProxy</link>
+		<linkDes>Fork</linkDes>
+		<Description>uHttpProxy run on OSK(RTOS) platform with 16M RAM and 4M Flash.</Description>
 	</repo>
 </Repositories>
